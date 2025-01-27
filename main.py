@@ -30,30 +30,26 @@ def button_calculated():
         bmi = weightget / (heightget / 100) ** 2
 
         if bmi <= 18.4:
-            result_label.config(text = "Underweight")
+            result_label.config(text = f"Your BMI is {bmi}. You are underweight")
 
 
         elif 18.5 <= bmi <= 24.9:
-            result_label.config(text = "Normal weight")
+            result_label.config(text = f"Your BMI is {bmi}. You are normal weight")
 
         elif 25.0 <= bmi <= 39.9:
-            result_label.config(text = "Overweight")
+            result_label.config(text = f"Your BMI is {bmi}. You are overweight")
 
 
         else:
-            result_label.config(text = "Obese")
+            result_label.config(text = f"Your BMI is {bmi}. You are obese")
 
     except ValueError:
             result_label.config(text = "Please enter valid numbers!")
-
 
 calculate_button = Button(text = "Calculate", command = button_calculated)
 calculate_button.pack()
 
 result_label = Label()
 result_label.pack()
-
-
-
 
 mainloop()
